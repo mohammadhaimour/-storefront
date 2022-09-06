@@ -1,0 +1,31 @@
+.card {
+    width: 900px;
+    height: 1000px;
+margin: auto;    
+}
+.card .fff {
+ margin-top: 50px;
+ justify-content: center;
+ text-align: center;
+ border-color: red;
+ background-color: rgb(235, 226, 215);
+ 
+ 
+}
+.nameCategory{
+    background-color:  rgb(235, 226, 215);
+    text-align: center;
+   
+}
+.cart{
+    background-color:  rgb(235, 226, 215);
+    text-align: center;
+    
+}
+.cart .ele{
+    background-color: rgb(202, 224, 90);
+    margin: 5px;
+    width: 100px;
+    height: 100px;
+    display: inline;
+}

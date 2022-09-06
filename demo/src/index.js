@@ -1,10 +1,18 @@
+
+import { Provider } from "react-redux";
+import mystore from './store/index';
 import ReactDOM from "react-dom";
 import App from "./app";
+
 const rootEl = document.getElementById("root");
 function Main() {
     return (
 
-        <App />
+        <Provider store={mystore}>
+            <App />
+        </Provider>
+
+
 
 
     )

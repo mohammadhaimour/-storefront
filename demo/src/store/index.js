@@ -1,14 +1,14 @@
-import { combineReducers, createStore } from 'redux';
-import cat from "./cat";
-import product from "./product";
+import { createStore, combineReducers } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import categories from './categories';
+import products from './products';
+import cart from './cart';
 
-let reducers = combineReducers({
-    cat: cat,
-    product: product
-})
+
+const rootReducer = combineReducers({ categories, products, cart });
 
 const store = () => {
-    return createStore(reducers);
-}
+    return createStore(rootReducer, composeWithDevTools());
+};
 
 export default store();
