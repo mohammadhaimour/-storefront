@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
-import { changeActiveCategory } from '../../store/categories';
-// import { changeActiveCategory } from '../../store/action';
+import { changeActiveCategory } from '../../store/action';
 import AppBar from '@mui/material/AppBar';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';

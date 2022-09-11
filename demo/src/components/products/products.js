@@ -4,15 +4,16 @@ import { CardHeader } from '@mui/material';
 import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
 import Button from '@mui/material/Button';
-import { addToCart } from '../../store/cart';
-// import { addToCart } from '../../store/action';
-import { deletecart } from '../../store/cart';
+// import { addToCart } from '../../store/cart';
+import { addToCart } from '../../store/action';
+import { deletecart } from '../../store/action';
 
 
 import { connect } from 'react-redux';
 import './products.css'
 
 function Products(props) {
+
     return (
         <>
             <div className="cart">
@@ -24,12 +25,23 @@ function Products(props) {
 
                             <>
                                 <div className='ele' >
-                                    {item.name}: {item.inCart} pc
-                                    {/* <button>dlete</button> */}
 
-                                    <IconButton onClick={() => { props.deletecart(item) }} aria-label="delete">
-                                        <DeleteIcon />
-                                    </IconButton>
+                                    {item.inCart > 0 ? item.name : null}
+
+                                    {item.inCart > 0 ? ':' : null}
+                                    {item.inCart > 0 ? 'pc' : null}
+
+                                    {item.inCart > 0 ? item.inCart : null}
+
+
+
+                                    {
+                                        item.inCart > 0 ?
+                                            <IconButton onClick={() => { props.deletecart(item) }} aria-label="delete">
+                                                <DeleteIcon />
+                                            </IconButton>
+                                            : null
+                                    }
 
 
 

@@ -19,9 +19,3 @@ export default (state = initialState, action) => {
     }
 };
 
-export const changeActiveCategory = (category) => {
-    return {
-        type: 'change',
-        payload: category,
-    };
-};

@@ -104,6 +104,8 @@ const initialState =
         },
     ];
 
+//const initialeState = null;
+
 export default (state = initialState, action) => {
     const { type, payload } = action;
     switch (type) {
@@ -115,6 +117,10 @@ export default (state = initialState, action) => {
                     return product;
                 }
             });
+        case 'GetData':
+            console.log('+++++++++', payload);
+            //return payload; هاي الي لازم تكون مفعلة في حال زبط معك ال  api
+            return state;
         default:
             return state;
     }

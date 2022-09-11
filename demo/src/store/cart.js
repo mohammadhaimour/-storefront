@@ -13,47 +13,44 @@ export default (state = initialState, action) => {
             for (let i = 0; i < state.cartItems.length; i++) {
                 if (state.cartItems[i].name === payload.name) {
                     exists = true;
-                    state.cartItems[i].inCart += 1;
-                    state.totalCartItems += 1;
+                    state.cartItems[i].inCart++;
+                    state.totalCartItems++;
                 }
             }
             if (!exists) {
                 state.cartItems.push(payload);
-                state.totalCartItems += 1;
+                state.totalCartItems++;
             }
             return state;
-        default:
-            return state;
+
+
 
         case 'deleteCart':
-            let xxx = false;
+
+            console.log("payload++++", payload);
+            console.log("Befor__state.cartItems++++", state.cartItems);
+            console.log("Before___state.totalCartItems++++", state.totalCartItems);
+
+
             for (let i = 0; i < state.cartItems.length; i++) {
                 if (state.cartItems[i].name === payload.name) {
-                    xxx = true;
                     console.log('state.cartItems[i].inCart+++++', state.cartItems[i].inCart);
-                    state.cartItems[i].inCart -= 1;
-                    state.totalCartItems -= 1;
+                    state.cartItems[i].inCart--;
+                    state.totalCartItems--;
+                    return { ...state }
                 }
                 else {
 
                 }
             }
+            console.log("After__state.cartItems", state.cartItems);
+            console.log("Affter___state.totalCartItems++++", state.totalCartItems);
 
+
+        default:
             return state;
     }
 
 };
 
-export const addToCart = product => {
-    return {
-        type: 'addToCart',
-        payload: product,
-    };
-};
 
-export const deletecart = (product) => {
-    return {
-        type: 'deleteCart',
-        payload: product,
-    };
-};
